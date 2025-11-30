@@ -24,7 +24,7 @@ export default function Hero() {
       {/* 🔥 Like Button & Visitor Counter */}
       <div className="hero-social-stats">
         <LikeButton />
-        <VisitorCounter />
+        <Visitorcounter />
       </div>
     </section>
   );
