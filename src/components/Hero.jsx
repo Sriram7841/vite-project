@@ -2,7 +2,7 @@ import React from "react";
 import myPic from "../assets/ram.jpg";
 
 import LikeButton from "./LikeButton";
-import VisitorCounter from "./VisitorCounter";
+import Visitorcounter from "./Visitorcounter";
 
 export default function Hero() {
   return (
