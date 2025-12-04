@@ -1,8 +1,7 @@
 import React from "react";
 import myPic from "../assets/ram.jpg";
 
-import LikeButton from "./LikeButton";
-import Visitorcounter from "./Visitorcounter";
+
 
 export default function Hero() {
   return (
@@ -21,11 +20,7 @@ export default function Hero() {
         <button className="hero-btn">View Projects</button>
       </a>
 
-      {/* 🔥 Like Button & Visitor Counter */}
-      <div className="hero-social-stats">
-        <LikeButton />
-        <Visitorcounter />
-      </div>
+      
     </section>
   );
 }
