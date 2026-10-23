@@ -1,5 +1,39 @@
 import React, { useState } from "react";
 
+const featuredProjects = [
+  {
+    title: "Multi-Document Intelligence System Using RAG",
+    domain: "Generative AI · LLM Pipelines · Enterprise Document Processing",
+    stack: ["Python", "LangChain", "FAISS", "OpenAI LLMs", "FastAPI", "Streamlit", "PostgreSQL", "Docker"],
+    points: [
+      "End-to-end RAG pipeline: document ingestion, chunking, OpenAI embeddings, FAISS storage and semantic retrieval for grounded Q&A.",
+      "Experimented with chunking strategy, embedding models and top-k retrieval to improve relevance and cut latency.",
+      "Built evaluation datasets and validation frameworks to benchmark accuracy, factuality and retrieval precision.",
+      "Prompt templates engineered to minimize hallucinations; deployed via FastAPI & Streamlit on AWS with Docker.",
+    ],
+  },
+  {
+    title: "Clinical Decision Support System Using Vector DB & LLMs",
+    domain: "Healthcare Generative AI · NLP · LLM Pipelines",
+    stack: ["Python", "FAISS", "LangChain", "BioBERT", "LLMs", "FastAPI"],
+    points: [
+      "Domain-specific healthcare pipeline with BioBERT document embeddings, FAISS retrieval and evidence-backed LLM responses.",
+      "Validated outputs with domain-specific frameworks for traceable, explainable answers linked to medical literature.",
+      "FastAPI inference endpoints for real-time, low-latency clinical query handling.",
+    ],
+  },
+  {
+    title: "Multi-Disease Prediction System Using Medical Imaging",
+    domain: "Deep Learning · Computer Vision · Healthcare AI",
+    stack: ["Python", "CNN", "TensorFlow/Keras", "OpenCV", "Transfer Learning"],
+    points: [
+      "CNNs with transfer learning (ResNet, VGG) for pneumonia, brain tumor and diabetic retinopathy classification.",
+      "Evaluated with accuracy, precision, recall, F1 and AUC-ROC; iterated on architecture and augmentation.",
+      "Served via inference APIs with OpenCV preprocessing for real-time diagnostic assistance.",
+    ],
+  },
+];
+
 export default function Projects() {
   const allProjects = [
     // ==== 100 PROJECTS ====
@@ -145,8 +179,38 @@ export default function Projects() {
   const goPrev = () => currentPage > 1 && setCurrentPage(currentPage - 1);
 
   return (
-    <section id="projects" className="projects-section">
-      <h2 className="projects-title">Projects</h2>
+    <section id="projects" className="section section--light">
+      <div className="section-header">
+        <p className="eyebrow">Portfolio</p>
+        <h2 className="section-title">
+          Key <span>Projects</span>
+        </h2>
+        <p className="section-desc">
+          Production-focused AI systems — from RAG pipelines to medical imaging
+        </p>
+      </div>
+
+      <div className="featured-grid">
+        {featuredProjects.map((fp, i) => (
+          <article className="featured-card" key={fp.title}>
+            <span className="featured-num">0{i + 1}</span>
+            <h3 className="featured-title">{fp.title}</h3>
+            <p className="featured-domain">{fp.domain}</p>
+            <ul className="featured-list">
+              {fp.points.map((pt, j) => (
+                <li key={j}>{pt}</li>
+              ))}
+            </ul>
+            <div className="featured-stack">
+              {fp.stack.map((t) => (
+                <span key={t}>{t}</span>
+              ))}
+            </div>
+          </article>
+        ))}
+      </div>
+
+      <h3 className="catalog-title">More Projects I've Built</h3>
 
       {/* 🔍 SEARCH BAR */}
       <div className="search-bar-container">
@@ -186,7 +250,7 @@ export default function Projects() {
           <div key={index} className="project-card project-hover">
             <h3 className="project-card-title">{p.title}</h3>
             <p className="project-card-desc">
-              Domain: <b>{p.domain}</b>
+              <span className="project-domain">{p.domain}</span>
             </p>
           </div>
         ))}
@@ -203,12 +267,12 @@ export default function Projects() {
         </button>
 
         <span className="pagination-info">
-          Page {currentPage} of {totalPages}
+          Page {totalPages === 0 ? 0 : currentPage} of {totalPages}
         </span>
 
         <button
           onClick={goNext}
-          disabled={currentPage === totalPages}
+          disabled={currentPage >= totalPages}
           className="pagination-btn"
         >
           Next

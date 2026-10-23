@@ -15,10 +15,13 @@ function App() {
       <About />
       <Skills />
       <Projects />
-      <Experience />   {/* ← MOVED BELOW PROJECTS */}
+      <Experience />
       <Education />
       <Certificates />
       <Contact />
+      <footer className="footer">
+        © {new Date().getFullYear()} Sriram Posimsetti · AI/ML Engineer
+      </footer>
     </div>
   )
 }
