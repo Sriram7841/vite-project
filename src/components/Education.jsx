@@ -3,10 +3,10 @@ import React from "react";
 export default function Education() {
   const education = [
     {
-      degree: "B.Tech in Electrical Engineering",
-      college: "Y.S.R Engineering College, Yogi Vemana University",
-      duration: "2020 – 2024",
-      location: "Proddutur, Kadapa",
+      degree: "B.Tech — Electrical & Electronics Engineering",
+      college: "Y.S.R. Engineering College of Yogi Vemana University",
+      duration: "2020 – 2024 · Graduated 2024",
+      location: "Proddatur, Kadapa",
       score: "CGPA: 7.97",
     },
     {
@@ -26,27 +26,25 @@ export default function Education() {
   ];
 
   return (
-    <section id="education" className="edu-section">
-      <div className="edu-header">
-        <p className="edu-subtitle">ACADEMIC JOURNEY</p>
-        <h2 className="edu-title">
+    <section id="education" className="section section--light">
+      <div className="section-header">
+        <p className="eyebrow">Academic Journey</p>
+        <h2 className="section-title">
           My <span>Education</span>
         </h2>
       </div>
 
       <div className="edu-grid">
-        {education.map((edu, index) => (
-          <div key={index} className="edu-card">
-            <div className="edu-degree">{edu.degree}</div>
-
-            <div className="edu-college">{edu.college}</div>
-
+        {education.map((edu) => (
+          <div key={edu.degree} className="edu-card">
+            <span className="edu-icon">🎓</span>
+            <h3 className="edu-degree">{edu.degree}</h3>
+            <p className="edu-college">{edu.college}</p>
             <div className="edu-row">
               <span>{edu.duration}</span>
               <span>{edu.location}</span>
             </div>
-
-            <div className="edu-score">{edu.score}</div>
+            <span className="edu-score">{edu.score}</span>
           </div>
         ))}
       </div>

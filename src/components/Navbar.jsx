@@ -1,29 +1,41 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import ResumeFile from "../assets/Resume.pdf";
+
+const links = [
+  { href: "#about", label: "About" },
+  { href: "#skills", label: "Skills" },
+  { href: "#projects", label: "Projects" },
+  { href: "#experience", label: "Experience" },
+  { href: "#education", label: "Education" },
+  { href: "#certifications", label: "Certificates" },
+  { href: "#contact", label: "Contact" },
+];
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 40);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   return (
-    <nav className="navbar">
+    <nav className={scrolled ? "navbar scrolled" : "navbar"}>
       <div className="navbar-inner">
+        <a href="#top" className="navbar-logo">
+          <span className="logo-mark">SP</span>
+          Sriram<span className="logo-accent">.</span>
+        </a>
 
-        {/* LOGO */}
-        <h1 className="navbar-logo">
-          Sriram<span>Posimsetti</span>
-        </h1>
-
-        {/* NAV LINKS (Desktop) */}
         <div className={menuOpen ? "navbar-links mobile-open" : "navbar-links"}>
-          <a href="#about" onClick={() => setMenuOpen(false)}>About</a>
-          <a href="#skills" onClick={() => setMenuOpen(false)}>Skills</a>
-          <a href="#projects" onClick={() => setMenuOpen(false)}>Projects</a>
-          <a href="#experience" onClick={() => setMenuOpen(false)}>Experience</a>
-          <a href="#education" onClick={() => setMenuOpen(false)}>Education</a>
-          <a href="#certifications" onClick={() => setMenuOpen(false)}>Certificates</a>
-          <a href="#contact" onClick={() => setMenuOpen(false)}>Contact</a>
-
-          {/* Resume button inside mobile menu */}
+          {links.map((l) => (
+            <a key={l.href} href={l.href} onClick={() => setMenuOpen(false)}>
+              {l.label}
+            </a>
+          ))}
           <a
             href={ResumeFile}
             download="Sriram_Posimsetti_Resume.pdf"
@@ -34,22 +46,23 @@ export default function Navbar() {
           </a>
         </div>
 
-        {/* Desktop Resume Button – RIGHT SIDE */}
         <a
           href={ResumeFile}
           download="Sriram_Posimsetti_Resume.pdf"
           className="resume-btn desktop-resume"
         >
-          Resume
+          Resume ↓
         </a>
 
-        {/* HAMBURGER */}
-        <div className="hamburger" onClick={() => setMenuOpen(!menuOpen)}>
-          <div className={menuOpen ? "bar bar1 open" : "bar bar1"}></div>
-          <div className={menuOpen ? "bar bar2 open" : "bar bar2"}></div>
-          <div className={menuOpen ? "bar bar3 open" : "bar bar3"}></div>
-        </div>
-
+        <button
+          className="hamburger"
+          aria-label="Toggle menu"
+          onClick={() => setMenuOpen(!menuOpen)}
+        >
+          <span className={menuOpen ? "bar open" : "bar"}></span>
+          <span className={menuOpen ? "bar open" : "bar"}></span>
+          <span className={menuOpen ? "bar open" : "bar"}></span>
+        </button>
       </div>
     </nav>
   );

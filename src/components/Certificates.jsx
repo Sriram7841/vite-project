@@ -29,13 +29,13 @@ export default function Certificates() {
   ];
 
   return (
-    <section id="certifications" className="certs-section">
-      <div className="certs-header">
-        <p className="certs-subtitle">ACHIEVEMENTS</p>
-        <h2 className="certs-title">
+    <section id="certifications" className="section section--purple">
+      <div className="section-header">
+        <p className="eyebrow">Achievements</p>
+        <h2 className="section-title">
           Certifications <span>& Workshops</span>
         </h2>
-        <p className="certs-desc">
+        <p className="section-desc">
           Professional certifications showcasing continuous learning and hands-on expertise.
         </p>
       </div>
@@ -43,6 +43,7 @@ export default function Certificates() {
       <div className="certs-grid">
         {certificates.map((cert, i) => (
           <div className="cert-card" key={i}>
+            <span className="cert-icon">🏅</span>
             <h3 className="cert-title">{cert.title}</h3>
             <p className="cert-org">{cert.org}</p>
 

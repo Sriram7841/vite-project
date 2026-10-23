@@ -5,109 +5,43 @@
   box-sizing: border-box;
 }
 
-/* ---------------- GLOBAL STYLING ---------------- */
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
+:root {
+  --purple-950: #1e0b3d;
+  --purple-900: #2e1065;
+  --purple-800: #4c1d95;
+  --purple-700: #6d28d9;
+  --purple-600: #7c3aed;
+  --purple-500: #8b5cf6;
+  --purple-300: #c4b5fd;
+  --purple-100: #ede9fe;
+  --purple-50: #f7f4ff;
+  --pink: #f0abfc;
+  --ink: #1f1637;
+  --muted: #5b5375;
+  --font-head: "Sora", system-ui, sans-serif;
+  --font-body: "DM Sans", system-ui, sans-serif;
 }
 
 body {
-  font-family: "Inter", sans-serif;
-  background: #eef2ff;      /* Pastel Lavender Background */
-  color: #1f2937;           /* Slate Gray Text */
+  font-family: var(--font-body);
+  background: #ffffff;
+  color: var(--ink);
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
 }
 
-/* Container */
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 24px;
-}
-
-/* Soft Card Style (reusable everywhere) */
-.card {
-  background: white;
-  padding: 32px;
-  border-radius: 20px;
-  box-shadow: 0 8px 20px rgba(79, 70, 229, 0.12);
-  transition: 0.3s ease;
-}
-
-.card:hover {
-  transform: scale(1.02);
-}
-
-/* Section Wrapper */
-.section {
-  padding: 100px 24px;
-}
-
-.section-title {
-  font-size: 40px;
-  font-weight: 700;
-  color: #4f46e5;
-  margin-bottom: 24px;
-  text-align: center;
-}
-
-/* ---------------- NAVBAR ---------------- */
-.navbar {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  padding: 16px 0;
-  backdrop-filter: blur(12px);
-  background: rgba(255, 255, 255, 0.7);
-  box-shadow: 0 4px 15px rgba(79, 70, 229, 0.1);
-  z-index: 1000;
-}
-
-.navbar-inner {
-  max-width: 1200px;
-  margin: auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 24px;
-}
-
-.navbar-title {
-  font-size: 22px;
-  font-weight: 700;
-  color: #4f46e5;
-}
-
-.navbar-links a {
-  margin-left: 24px;
-  font-size: 16px;
-  color: #374151;
+a {
+  color: inherit;
   text-decoration: none;
-  font-weight: 500;
-  transition: color 0.2s;
 }
 
-.navbar-links a:hover {
-  color: #4f46e5;
-}
-.like-btn {
-  padding: 10px 24px;
-  background: linear-gradient(90deg, #8b5cf6, #ec4899);
-  border: none;
-  border-radius: 30px;
-  color: white;
-  cursor: pointer;
-  font-size: 16px;
-  font-weight: 600;
-  transition: 0.25s ease;
-}
-
-.like-btn:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 15px rgba(236, 72, 153, 0.4);
-}
-.hero-social-stats {
-  margin-top: 30px;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  align-items: center;
+img {
+  max-width: 100%;
+  display: block;
 }
