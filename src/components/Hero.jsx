@@ -4,7 +4,7 @@ import ResumeFile from "../assets/Resume.pdf";
 
 export default function Hero() {
   return (
-    <section id="top" className="hero section section--purple">
+    <section id="top" className="hero section section--sunrise">
       <div className="hero-inner">
         <div className="hero-content">
           <span className="hero-badge">
@@ -16,13 +16,13 @@ export default function Hero() {
           </h1>
 
           <h2 className="hero-role">
-            AI/ML Engineer · LLM Pipelines · RAG Systems · Generative AI
+            AI/ML Engineer · LLM & RAG Systems · GraphRAG · Generative AI · Medical Imaging
           </h2>
 
           <p className="hero-subtitle">
-            I build, evaluate, and optimize LLM-based pipelines, RAG systems and
-            document-processing workflows for production-grade applications —
-            tuning for accuracy, latency and cost.
+            I build LLM pipelines, RAG and GraphRAG systems, and deep learning
+            applications for healthcare and enterprise — from brain MRI report
+            generation to research assistants over 200K+ arXiv papers.
           </p>
 
           <div className="hero-actions">
@@ -40,16 +40,16 @@ export default function Hero() {
 
           <div className="hero-stats">
             <div>
-              <strong>1+</strong>
-              <span>Year in AI/ML</span>
+              <strong>2+</strong>
+              <span>Years in AI/ML</span>
             </div>
             <div>
-              <strong>3</strong>
-              <span>Production AI projects</span>
+              <strong>4</strong>
+              <span>Featured AI projects</span>
             </div>
             <div>
-              <strong>RAG</strong>
-              <span>LangChain · FAISS · OpenAI</span>
+              <strong>GraphRAG</strong>
+              <span>LangChain · FAISS · PyTorch</span>
             </div>
           </div>
         </div>

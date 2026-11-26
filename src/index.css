@@ -11,18 +11,18 @@ html {
 }
 
 :root {
-  --purple-950: #1e0b3d;
-  --purple-900: #2e1065;
-  --purple-800: #4c1d95;
-  --purple-700: #6d28d9;
-  --purple-600: #7c3aed;
-  --purple-500: #8b5cf6;
-  --purple-300: #c4b5fd;
-  --purple-100: #ede9fe;
-  --purple-50: #f7f4ff;
-  --pink: #f0abfc;
-  --ink: #1f1637;
-  --muted: #5b5375;
+  --sun-950: #9a3412;
+  --sun-900: #c2410c;
+  --sun-800: #c2410c;
+  --sun-700: #ea580c;
+  --sun-600: #f97316;
+  --sun-500: #fb923c;
+  --sun-300: #fed7aa;
+  --sun-100: #ffedd5;
+  --sun-50: #fff7ed;
+  --pink: #fef08a;
+  --ink: #3b1d0a;
+  --muted: #6b5545;
   --font-head: "Sora", system-ui, sans-serif;
   --font-body: "DM Sans", system-ui, sans-serif;
 }

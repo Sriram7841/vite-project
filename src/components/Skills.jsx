@@ -5,46 +5,53 @@ const skillGroups = [
   {
     icon: "🧠",
     title: "LLM & Gen AI",
-    items: ["OpenAI LLMs", "Hugging Face Transformers", "LangChain", "LangGraph", "RAG Architecture", "Prompt Engineering", "RLHF", "Agentic AI", "Instruction Tuning", "Embeddings"],
+    items: ["OpenAI LLMs", "Mistral-7B", "MedGemma", "Hugging Face Transformers", "LangChain", "LangGraph", "RAG", "GraphRAG", "Agentic AI", "Prompt Engineering", "LoRA/PEFT Fine-Tuning", "Instruction Tuning", "RLHF"],
   },
-  { icon: "🔬", title: "ML Frameworks", items: ["TensorFlow", "Keras", "PyTorch", "Scikit-learn"] },
-  { icon: "🗂️", title: "Vector Databases", items: ["FAISS", "Semantic Search", "Similarity Retrieval"] },
   {
-    icon: "📄",
-    title: "Doc Processing",
-    items: ["Multi-document ingestion", "PDF parsing", "Text chunking", "Embedding generation"],
+    icon: "🗂️",
+    title: "Retrieval & Vector Search",
+    items: ["FAISS", "Sentence-Transformers", "Embeddings", "Semantic Search", "Knowledge Graphs (NetworkX)", "Text Chunking", "Document Ingestion", "PDF Parsing"],
+  },
+  {
+    icon: "👁️",
+    title: "Deep Learning & CV",
+    items: ["PyTorch", "TensorFlow", "Keras", "Vision Transformers (3D ViT)", "CNN", "Transfer Learning", "OpenCV", "HOG Features", "Medical Imaging (MRI, NIfTI, DICOM)"],
+  },
+  {
+    icon: "💬",
+    title: "ML & NLP",
+    items: ["Scikit-learn", "XGBoost", "Random Forest", "SVM", "Naive Bayes", "TF-IDF", "Text Classification", "NER", "Summarization", "BioBERT"],
   },
   {
     icon: "📏",
     title: "Evaluation",
-    items: ["ROUGE scoring", "Human evaluation benchmarks", "Accuracy / latency / cost optimization", "Validation framework design"],
+    items: ["ROUGE-1/2/L", "BLEU-4", "Accuracy", "Precision / Recall / F1", "AUC-ROC", "Human Evaluation", "Latency & Cost Optimization"],
   },
   {
-    icon: "💬",
-    title: "NLP",
-    items: ["Text classification", "Text mining", "Summarization", "NER", "BioBERT", "Pattern recognition"],
+    icon: "🔌",
+    title: "Backend & APIs",
+    items: ["Django", "Django REST Framework", "JWT Authentication", "FastAPI", "Flask", "Streamlit", "REST APIs"],
   },
-  { icon: "🔌", title: "APIs & Backend", items: ["FastAPI", "Django REST Framework", "Flask", "Streamlit"] },
-  { icon: "🛢️", title: "Databases", items: ["PostgreSQL", "MySQL"] },
+  { icon: "🎨", title: "Frontend", items: ["React", "Vite", "HTML", "CSS"] },
   {
-    icon: "👁️",
-    title: "Computer Vision",
-    items: ["CNN", "OpenCV", "Transfer Learning", "Image Classification", "Object Detection"],
+    icon: "🛢️",
+    title: "Data & Databases",
+    items: ["Pandas", "NumPy", "PostgreSQL", "MySQL", "SQLite", "Hugging Face Datasets", "Parquet"],
   },
-  { icon: "🛠️", title: "Tools & Cloud", items: ["Git", "GitHub", "Postman", "VSCode", "Power BI", "AWS (EC2, S3, Lambda)", "Docker"] },
+  { icon: "🛠️", title: "Cloud & Tools", items: ["AWS (EC2, S3, Lambda)", "Docker", "CI/CD", "Git", "GitHub", "Postman", "VS Code", "Power BI"] },
 ];
 
 const competencies = [
-  "LLM Pipeline Development", "RAG System Design", "Document Processing", "Embeddings & Vector Search",
-  "Prompt Engineering", "Model Fine-Tuning", "RLHF", "Hugging Face Transformers",
-  "LangChain & LangGraph", "OpenAI LLMs", "Evaluation Dataset Development", "Validation Frameworks",
-  "Accuracy & Latency Optimization", "Generative AI", "Agentic AI", "NLP",
-  "Python", "AWS", "FastAPI", "Production AI Systems",
+  "LLM Pipeline Development", "RAG System Design", "GraphRAG", "Knowledge Graphs",
+  "Embeddings & Vector Search", "Prompt Engineering", "LoRA/PEFT Fine-Tuning", "Vision Transformers",
+  "Medical Imaging AI", "MedGemma", "LangChain & LangGraph", "Agentic AI",
+  "Model Evaluation (ROUGE, BLEU, F1)", "Evaluation Dataset Development", "Latency & Cost Optimization", "Generative AI",
+  "NLP", "Django & FastAPI", "AWS", "Full-Stack AI Applications",
 ];
 
 export default function Skills() {
   return (
-    <section id="skills" className="section section--purple">
+    <section id="skills" className="section section--sunrise">
       <div className="section-header">
         <p className="eyebrow">My Expertise</p>
         <h2 className="section-title">

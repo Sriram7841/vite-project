@@ -2,34 +2,47 @@ import React, { useState } from "react";
 
 const featuredProjects = [
   {
-    title: "Multi-Document Intelligence System Using RAG",
-    domain: "Generative AI · LLM Pipelines · Enterprise Document Processing",
-    stack: ["Python", "LangChain", "FAISS", "OpenAI LLMs", "FastAPI", "Streamlit", "PostgreSQL", "Docker"],
+    title: "NeuroReport: Brain MRI Report Generation with 3D ViT & MedGemma LoRA",
+    domain: "Medical Imaging · Vision-Language Models · Generative AI",
+    github: "https://github.com/Sriram7841/Brain-MRI",
+    stack: ["Python", "PyTorch", "3D ViT", "MedGemma-4B", "LoRA/PEFT", "Hugging Face Datasets", "Django", "SQLite", "NIfTI", "DICOM"],
     points: [
-      "End-to-end RAG pipeline: document ingestion, chunking, OpenAI embeddings, FAISS storage and semantic retrieval for grounded Q&A.",
-      "Experimented with chunking strategy, embedding models and top-k retrieval to improve relevance and cut latency.",
-      "Built evaluation datasets and validation frameworks to benchmark accuracy, factuality and retrieval precision.",
-      "Prompt templates engineered to minimize hallucinations; deployed via FastAPI & Streamlit on AWS with Docker.",
+      "End-to-end radiology report generator on BraTS 2020 (208 patients, four MRI modalities: T1, T1ce, T2, FLAIR), converting each patient into a 4 × 10 × 224 × 224 volume.",
+      "Designed a 3D ViT encoder, MLP projector and cross-attention decoder, with an optional MedGemma-4B LoRA fine-tuning path on GPU; kept the checkpoint with the lowest validation loss.",
+      "Evaluated reports with ROUGE-1/2/L and BLEU-4 per patient, plus a doctor-approval workflow because lexical metrics miss clinically serious errors such as the wrong hemisphere.",
+      "Django app covering Hugging Face/Parquet import with patient-level leakage checks, preprocessing, PCA feature extraction, training with live loss curves and evaluation; accepts NIfTI, DICOM or PNG scans. Covered by end-to-end automated tests.",
     ],
   },
   {
-    title: "Clinical Decision Support System Using Vector DB & LLMs",
-    domain: "Healthcare Generative AI · NLP · LLM Pipelines",
-    stack: ["Python", "FAISS", "LangChain", "BioBERT", "LLMs", "FastAPI"],
+    title: "GraphRAG Scientific Research Assistant",
+    domain: "GraphRAG · LLMs · Knowledge Graphs · NLP",
+    github: "https://github.com/Sriram7841/Scientific-RAG",
+    stack: ["Python", "Django REST Framework", "FAISS", "NetworkX", "Sentence-Transformers", "Mistral-7B-Instruct", "Scikit-learn", "JWT"],
     points: [
-      "Domain-specific healthcare pipeline with BioBERT document embeddings, FAISS retrieval and evidence-backed LLM responses.",
-      "Validated outputs with domain-specific frameworks for traceable, explainable answers linked to medical literature.",
-      "FastAPI inference endpoints for real-time, low-latency clinical query handling.",
+      "GraphRAG question answering over 206,489 arXiv papers in 25 categories, combining FAISS cosine retrieval (all-MiniLM-L6-v2, 400-word chunks, 50-word overlap) with a NetworkX knowledge graph of models, methods and domains.",
+      "TF-IDF (30K features, unigrams + bigrams) LinearSVC and Complement Naive Bayes classifiers on a stratified 80/20 split route each query to its research category.",
+      "Grounded answers from Mistral-7B-Instruct via the Hugging Face Inference API, with retries, a Flan-T5 fallback, an extractive fallback and response caching.",
+      "JWT-secured REST APIs for chat and classification, plus an admin dashboard for EDA, background training jobs and knowledge-graph visualization, with chat history and PDF export.",
     ],
   },
   {
-    title: "Multi-Disease Prediction System Using Medical Imaging",
-    domain: "Deep Learning · Computer Vision · Healthcare AI",
-    stack: ["Python", "CNN", "TensorFlow/Keras", "OpenCV", "Transfer Learning"],
+    title: "MediVision: Multi-Modal Disease Prediction from Symptoms & Medical Images",
+    domain: "Healthcare AI · Semantic Search · Computer Vision",
+    github: "https://github.com/Sriram7841/Medivision",
+    stack: ["Python", "Flask", "FAISS", "Sentence-Transformers", "Scikit-learn", "XGBoost", "OpenCV", "scikit-image"],
     points: [
-      "CNNs with transfer learning (ResNet, VGG) for pneumonia, brain tumor and diabetic retinopathy classification.",
-      "Evaluated with accuracy, precision, recall, F1 and AUC-ROC; iterated on architecture and augmentation.",
-      "Served via inference APIs with OpenCV preprocessing for real-time diagnostic assistance.",
+      "Symptom-to-disease prediction using sentence-transformer embeddings and FAISS nearest-neighbour search over the Symptom2Disease dataset.",
+      "Image-based screening across five body systems (brain, eye, lung, bone, skin) using HOG features and Random Forest; compared Decision Tree, Random Forest and XGBoost on accuracy, precision, recall and F1.",
+      "Flask web app with user and admin dashboards, prediction history, model retraining and performance reporting.",
+    ],
+  },
+  {
+    title: "Liver Disease Prediction Using Neural Networks",
+    domain: "Deep Learning · Healthcare AI · Web Apps",
+    github: "https://github.com/Sriram7841/liver-disease-django",
+    stack: ["Python", "TensorFlow", "Keras", "Django"],
+    points: [
+      "Trained a Keras neural network classifier for liver disease and served it through a Django web app with user registration, login and a prediction interface.",
     ],
   },
 ];
@@ -186,7 +199,7 @@ export default function Projects() {
           Key <span>Projects</span>
         </h2>
         <p className="section-desc">
-          Production-focused AI systems — from RAG pipelines to medical imaging
+          Production-focused AI systems — from GraphRAG assistants to brain MRI report generation
         </p>
       </div>
 
@@ -206,6 +219,14 @@ export default function Projects() {
                 <span key={t}>{t}</span>
               ))}
             </div>
+            <a
+              className="featured-link"
+              href={fp.github}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              View on GitHub →
+            </a>
           </article>
         ))}
       </div>

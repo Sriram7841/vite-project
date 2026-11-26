@@ -9,13 +9,14 @@ export default function Experience() {
       duration: "June 2024 – Present",
       location: "Hyderabad, India",
       points: [
-        "Evaluate and improve LLM-based pipelines by benchmarking model outputs across accuracy, latency and cost; iterate on prompt strategies to optimize performance.",
-        "Build and optimize RAG systems and document processing pipelines using LangChain, FAISS and OpenAI LLMs for enterprise knowledge management.",
-        "Run systematic experiments comparing embedding models, chunking strategies and retrieval configurations to reduce hallucination rates and improve contextual relevance.",
-        "Develop evaluation datasets and validation frameworks to measure LLM output quality; implement automated testing pipelines for production AI systems.",
-        "Fine-tune transformer-based LLMs using Hugging Face on domain-specific datasets, applying instruction tuning and RLHF-ready alignment strategies.",
-        "Integrate Generative AI and Agentic AI workflows (LangGraph) into scalable production applications deployed on AWS (EC2, S3, Lambda) with CI/CD pipelines.",
-        "Design and expose ML model inference endpoints via FastAPI for real-time, low-latency LLM-powered application features.",
+        "Build and optimize RAG and document processing pipelines using LangChain, FAISS and OpenAI LLMs for enterprise knowledge management.",
+        "Benchmark LLM outputs on accuracy, latency and cost, and iterate on prompt strategies to improve performance.",
+        "Run experiments comparing embedding models, chunking strategies and retrieval settings to reduce hallucinations and improve answer relevance.",
+        "Develop evaluation datasets and validation frameworks to measure LLM output quality, with automated testing for production AI systems.",
+        "Fine-tune transformer models with Hugging Face on domain-specific data using instruction tuning and LoRA/PEFT.",
+        "Integrate Generative AI and agentic workflows (LangGraph) into production applications deployed on AWS (EC2, S3, Lambda) with CI/CD.",
+        "Expose model inference through FastAPI and Django REST endpoints for real-time, low-latency AI features.",
+        "Deliver full-stack AI applications with admin dashboards for dataset upload, model training, evaluation and user management.",
       ],
     },
     {
@@ -25,15 +26,15 @@ export default function Experience() {
       duration: "June 2023 – July 2023",
       location: "India",
       points: [
-        "Assisted in building and evaluating supervised ML models for classification and regression tasks on real-world large datasets.",
-        "Performed data preprocessing, feature engineering and exploratory data analysis to prepare model training pipelines.",
-        "Ran model evaluation experiments tracking accuracy, precision, recall and F1-score to assess and improve model quality.",
+        "Built and evaluated supervised ML models for classification and regression on large real-world datasets.",
+        "Performed data preprocessing, feature engineering and exploratory data analysis for model training pipelines.",
+        "Tracked accuracy, precision, recall and F1-score across experiments to improve model quality.",
       ],
     },
   ];
 
   return (
-    <section id="experience" className="section section--purple">
+    <section id="experience" className="section section--sunrise">
       <div className="section-header">
         <p className="eyebrow">Career Journey</p>
         <h2 className="section-title">

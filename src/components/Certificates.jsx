@@ -29,7 +29,7 @@ export default function Certificates() {
   ];
 
   return (
-    <section id="certifications" className="section section--purple">
+    <section id="certifications" className="section section--sunrise">
       <div className="section-header">
         <p className="eyebrow">Achievements</p>
         <h2 className="section-title">
